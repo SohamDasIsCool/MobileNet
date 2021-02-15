@@ -29,8 +29,40 @@
     box-shadow:0px 0px 100px white ;
 }
 
+#result{
+    border:2px solid wheat;
+    width:310px;
+    height:300px;
+    box-shadow:0px 0px 100px white ;
+}
+
 .main_div button{
    width:310px;
    font-size: 16px;
    box-shadow:0px 0px 100px whitesmoke;
+}
+
+.footer_div{
+    margin-bottom:50px;
+}
+
+.footer_div h4{
+    background:white;
+    border-radius:10px;
+    padding:5px;
+    box-shadow:0,0,100 white;
+}
+
+.footer_div img{
+    width:70px;
+}
+
+.copy_right_footer{
+    position:fixed;
+    color:tomato;
+    bottom:0;
+    width:100%;
+    background-color:#f5f5f5;
+    line-height:3;
+    text-align:center;
 }

@@ -1,0 +1,27 @@
+Webcam.set({
+    width:310,
+    height:300,
+    image_format:'png',
+    png_quality:90,
+    constraints:{
+        facingMode:"environment"
+    }
+});
+camera=document.getElementById("camera");
+Webcam.attach('#camera');
+
+setInterval(function(){
+x=Math.floor(Math.random()*3);
+if(x==1){
+    document.getElementById("camera").style.backgroundColor="red";
+    document.getElementById("result").style.backgroundColor="blue";
+}
+if(x==2){
+    document.getElementById("camera").style.backgroundColor="blue";
+    document.getElementById("result").style.backgroundColor="yellow";
+}
+if(x==3){
+    document.getElementById("camera").style.backgroundColor="yellow";
+    document.getElementById("result").style.backgroundColor="red";
+}
+},100)
