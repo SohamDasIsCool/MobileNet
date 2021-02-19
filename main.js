@@ -10,6 +10,34 @@ Webcam.set({
 camera=document.getElementById("camera");
 Webcam.attach('#camera');
 
+function take_snapshot(){
+    Webcam.snap(function(data_uri) {
+       document.getElementById("result").innerHTML='<img id="captured_image" src="'+data_uri+'"/>';
+    });
+}
+
+console.log('ml5.version',ml5.version);
+
+classifier=ml5.imageClassifier('MobileNet',ModelLoaded);
+
+function ModelLoaded() {
+    console.log("Model Loaded");
+}
+
+function check(){
+    img=document.getElementById('captured_image');
+    classifier.classify(img,gotResult);
+}
+
+function gotResult(error, results) {
+    if(error){
+        console.error(error);
+    } else {
+        console.log(results);
+        document.getElementById("object_name").innerHTML=results[0].label;
+    }
+}
+
 setInterval(function(){
 x=Math.floor(Math.random()*3);
 if(x==1){
@@ -24,4 +52,4 @@ if(x==3){
     document.getElementById("camera").style.backgroundColor="yellow";
     document.getElementById("result").style.backgroundColor="red";
 }
-},100)
+},100);
